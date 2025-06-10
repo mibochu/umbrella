@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>우산 챙겨? 말아?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>우산 챙겨? 말아? 🌂</h1>
+        
+        <div class="location-section">
+            <h2>위치 설정</h2>
+            <div class="location-input">
+                <input type="text" id="locationInput" placeholder="도시 이름을 입력하세요">
+                <button id="saveLocationBtn">저장</button>
+            </div>
+            <p id="locationStatus"></p>
+            <p>저장된 위치: <span id="savedLocation">없음</span></p>
+        </div>
+
+        <div class="weather-section">
+            <h2>현재 날씨</h2>
+            <div id="weatherInfo"></div>
+        </div>
+
+        <div class="umbrella-section">
+            <button id="checkUmbrellaBtn" class="umbrella-button">우산 챙겨말아?</button>
+            <div id="umbrella-result"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
