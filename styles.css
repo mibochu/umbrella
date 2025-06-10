@@ -72,7 +72,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.85rem; /* 0.9rem에서 0.85rem으로 줄여보세요 */
+    font-size: 0.8rem; /* 0.9rem에서 0.85rem으로 줄여보세요 */
     transition: background-color 0.3s;
     min-width: 60px;
     white-space: nowrap; /* 중요: 버튼 텍스트가 줄 바꿈되지 않도록 설정 */
