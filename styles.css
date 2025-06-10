@@ -1,9 +1,11 @@
+/* Reset 기본 스타일 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body 및 기본 텍스트 스타일 */
 body {
     font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
     background-color: #f5f6fa;
@@ -11,12 +13,14 @@ body {
     line-height: 1.6;
 }
 
+/* 컨테이너 중앙 정렬 */
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* 제목 스타일 */
 h1 {
     text-align: center;
     color: #0984e3;
@@ -30,6 +34,7 @@ h2 {
     font-size: 1.2rem;
 }
 
+/* 섹션 공통 스타일 */
 .location-section, .weather-section, .umbrella-section {
     background: white;
     padding: 20px;
@@ -38,56 +43,56 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* 위치 입력 섹션 - Flexbox 적용 (핵심 수정 부분) */
 .location-input {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Flexbox 활성화 */
+    gap: 10px;     /* 요소들 간 간격 */
     margin-bottom: 10px;
     position: relative;
+    align-items: center; /* input과 버튼의 세로 정렬을 맞춤 (선택 사항) */
 }
 
+/* 검색창 (input) 스타일 - 유연하게 줄어들도록 설정 */
 input[type="text"] {
-    flex: 1;
+    flex-grow: 1;     /* 남는 공간을 모두 채움 */
+    flex-shrink: 1;     /* 공간이 부족하면 줄어듦 */
+    flex-basis: auto;   /* 기본 너비는 콘텐츠에 맞게 (필요에 따라 0%도 가능) */
+    min-width: 0;       /* 중요: flex 아이템이 콘텐츠 크기 때문에 넘치는 것 방지 */
     padding: 10px;
     border: 1px solid #dfe6e9;
     border-radius: 5px;
     font-size: 1rem;
 }
 
-//button {
-//    padding: 10px 20px;
-//    background-color: #0984e3;
-//    color: white;
-//    border: none;
-//    border-radius: 5px;
-//    cursor: pointer;
-//    font-size: 0.9rem;
-//    transition: background-color 0.3s;
-//}
-
+/* 저장 버튼 스타일 - 고정 크기를 유지하도록 설정 */
 button {
-    /* 기존 스타일 유지 */
+    flex-grow: 0;      /* 남는 공간이 있어도 늘어나지 않음 */
+    flex-shrink: 0;      /* 중요: 공간이 부족해도 줄어들지 않음 */
+    flex-basis: auto;  /* 기본 너비는 콘텐츠에 맞게 */
+    white-space: nowrap; /* 중요: 버튼 텍스트가 줄 바꿈되지 않도록 강제 */
     padding: 10px 20px;
     background-color: #0984e3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.8rem; /* 0.9rem에서 0.85rem으로 줄여보세요 */
+    font-size: 0.9rem; /* 이 크기가 한 줄에 나오도록 조절 */
     transition: background-color 0.3s;
-    min-width: 60px;
-    white-space: nowrap; /* 중요: 버튼 텍스트가 줄 바꿈되지 않도록 설정 */
-    flex-shrink: 0; /* 중요: flex 컨테이너 내에서 버튼이 줄어들지 않도록 함 */
+    /* 필요하다면 min-width를 명시적으로 지정하여 버튼의 최소 너비를 설정할 수 있습니다. */
+    /* min-width: 60px; */
 }
 
 button:hover {
     background-color: #0873c4;
 }
 
+/* 저장 상태 메시지 */
 #locationStatus {
     font-size: 0.9rem;
     color: #666;
 }
 
+/* 날씨 정보 섹션 */
 .weather-main {
     display: flex;
     align-items: center;
@@ -113,6 +118,7 @@ button:hover {
     margin: 5px 0;
 }
 
+/* 우산 확인 버튼 */
 .umbrella-button {
     width: 100%;
     padding: 15px;
@@ -125,6 +131,7 @@ button:hover {
     background-color: #00a884;
 }
 
+/* 우산 결과 표시 영역 */
 #umbrella-result {
     padding: 15px;
     border-radius: 5px;
@@ -135,6 +142,7 @@ button:hover {
     white-space: pre-line;
 }
 
+/* 자동 완성 리스트 스타일 */
 .autocomplete-list {
     position: absolute;
     top: 100%;
@@ -172,4 +180,4 @@ button:hover {
 .autocomplete-list li.selected {
     background-color: #e3f2fd;
     border-left: 3px solid #2196f3;
-} 
+}
