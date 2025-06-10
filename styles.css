@@ -53,16 +53,35 @@ input[type="text"] {
     font-size: 1rem;
 }
 
+//button {
+//    padding: 10px 20px;
+//    background-color: #0984e3;
+//    color: white;
+//    border: none;
+//    border-radius: 5px;
+//    cursor: pointer;
+//    font-size: 0.9rem;
+//    transition: background-color 0.3s;
+//}
+
 button {
+    /* 기존 스타일 유지 */
     padding: 10px 20px;
     background-color: #0984e3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* 0.9rem에서 0.85rem으로 줄여보세요 */
     transition: background-color 0.3s;
+    white-space: nowrap; /* 중요: 버튼 텍스트가 줄 바꿈되지 않도록 설정 */
+    flex-shrink: 0; /* 중요: flex 컨테이너 내에서 버튼이 줄어들지 않도록 함 */
 }
+
+button:hover {
+    background-color: #0873c4;
+}
+
 
 button:hover {
     background-color: #0873c4;
