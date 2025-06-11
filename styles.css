@@ -157,9 +157,8 @@ button:hover {
 .autocomplete-list li.selected {
     background-color: #e3f2fd;
     border-left: 3px solid #2196f3;
-}
+} 
 
-/* ✅ 모바일 반응형 스타일 추가 */
 @media (max-width: 480px) {
     .location-input {
         flex-direction: column;
@@ -170,4 +169,11 @@ button:hover {
     .location-input button {
         width: 100%;
     }
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: calc(env(safe-area-inset-top, 20px) + 20px); /* 추가된 줄 */
 }
